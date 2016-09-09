@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<!-- /CODING/WebWorks/simple_blog -->
+
+<html lang="EN" ng-app="technomart">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Техномарт</title>
+    <meta name="Author" content="Dmitry Scherenkov" />
+
+    <link href='https://fonts.googleapis.com/css?family=Cuprum:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- build:css css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angularjs-slider/dist/rzslider.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" type="text/css" href="css/less.css">
+    <!-- endbuild -->
+
+    <!-- build:js js/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="bower_components/angularjs-slider/dist/rzslider.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+    <!-- build:js js/main.js -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+       <script>
+          document.createElement('header');
+          document.createElement('nav');
+          document.createElement('section');
+          document.createElement('article');
+          document.createElement('aside');
+          document.createElement('footer');
+       </script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid header-container">
+            <nav class="topmenu" role="navigation">
+                <div class="container-fluid topmenu-inner">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                        </button>-->
+                        <a href="index.html" class="logo">Техномарт</a>
+
+                        <!-- Collect the nav links, forms, and other content for toggling
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> </div> -->
+                        <form class="topsearch" name="search-form" action="">
+                            <input type="button" class="submit-search">
+                            <input type="text" class="search-text" value="" placeholder="Поиск:">
+                        </form>
+                        <button class="main-menu-toggle">
+                            <span class="sr-only">Главное меню</span>
+                            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                        </button>
+                        <a href="#1" class="buy-btn">Оформить заказ</a>
+                        <a href="#1" class="buy-btn-alt">
+                            <span class="sr-only">Купить</span>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </a>
+                        <a href="#1" class="cart-btn">Корзина: 0</a>
+                        <a href="#1" class="cart-btn-alt">
+                            <span class="sr-only">Корзина</span>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 0
+                        </a>
+                        <a href="#1" class="bookmarks-btn">Закладки: 0</a>
+                        <a href="#1" class="bookmarks-btn-alt">
+                            <span class="sr-only">закладки</span>
+                            <i class="fa fa-bookmark" aria-hidden="true"></i> 0
+                        </a>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+            <div class="clear"></div>
+            <div class="container-fluid headline">
+                <div class="container-fluid headline inner">
+                    <div class="row">
+                        <div class="col-sm-4 headline-text"><span>Интернет-магазин
+                            строительных материалов
+                            и инструментов для ремонта</span></div>
+                        <div class="col-sm-4 col-xs-12 contact-block">
+                            <div class="phone-block">+7 (495) 555-05-55</div>
+                            <div class="adress-block">Москва, ул. Строителей, д. 15</div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 login-block">
+                            <a href="#1" class="login-btn">Войти</a>
+                            <a href="#1" class="registration-btn">Регистрация</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Главное меню -->
+        <div class="container-fluid mainmenu-container">
+            <div class="container-fluid mainmenu-container-inner">
+                <div class="row">
+                    <nav class="col-sm-12 mainmenu">
+                        <ul class="mainmenu-ul">
+                            <li class="main-menu-ul button"><a href=".index.html">Главная</a></li>
+                            <li class="main-menu-ul button"><a href="#1">Компания</a></li>
+                            <li class="main-menu-ul button"><a href="catalog.html">Каталог</a></li>
+                            <li class="main-menu-ul button"><a href="#1">Новости</a></li>
+                            <li class="main-menu-ul button"><a href="#1">Спецпредложения</a></li>
+                            <li class="main-menu-ul button"><a href="#1">Доставка</a></li>
+                            <li class="main-menu-ul button"><a href="#1">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <content>
+
+        <!-- Блоки, слайдер -->
+
+        <div class="container-fluid">
+            <div class="container-fluid block1-container">
+                <div class="row">
+                    <div class="col-lg-12 breadcrumbs"></div>
+                </div>
+                <div class="top-blocks">
+                    <div class="bl-elem1">
+                        <p>Материалы</p>
+                        <a href="#1" class="block1 b1-btn">На любой вкус</a>
+                        <div class="new-ribbon"></div>
+                    </div>
+                    <div class="bl-elem2">
+                        <p>Инстурмент</p>
+                        <a href="#1" class="block1 b1-btn">На все случаи</a></div>
+                    <div class="bl-elem3">
+                        <p>Техника</p>
+                        <a href="#1" class="block1 b1-btn">Для стройки</a>
+                    </div>
+
+                    <section class="awSlider">
+                        <div class="carousel slide" data-ride="carousel" data-interval="4000">
+
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target=".carousel" data-slide-to="0" class="active"></li>
+                                <li data-target=".carousel" data-slide-to="1"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="img/slider_1.png">
+                                    <div class="carousel-caption"><a href="#1" class="slider-inner-btn">Открыть каталог</a></div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/slider_2.png">
+                                    <div class="carousel-caption"><a href="#1" class="slider-inner-btn">Открыть каталог</a></div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                                <span class="glyphicon" aria-hidden="true">
+                                <img src="img/slider_left.png">
+                                </span>
+                                <span class="sr-only">Назад</span>
+                            </a>
+                            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                                <span class="glyphicon" aria-hidden="true"><img src="img/slider_right.png"></span>
+                                <span class="sr-only">Вперед</span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <div class="bl-elem4-container">
+                        <div class="bl-elem4">
+                            <p>Скидки 50%</p>
+                            <a href="#1" class="block1 b1-btn">На 350 товаров</a>
+                        </div>
+                        <div class="bl-elem5">
+                            <p>Доставка</p>
+                            <a href="#1" class="block1 b1-btn">Бесплатно</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Популярные товары -->
+
+            <div class="container-fluid pop-container">
+                <div class="row">
+                    <div class="col-lg-12 pop-container-header">
+                        <h1>Популярные товары:</h1>
+                        <a href="#1" class="header-btn">Все популярные товары</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                   <div class="pop-items-container">
+                    <div class="col-lg-3 pop-item-container">
+                        <div class="pop-item-content">
+                            <img class="pop-item-content-img" src="img/card_perforator.png">
+                            <div class="pop-item-btns hidden">
+                                <a href="#1" class="card-buy-btn">Купить</a>
+                                <a href="#1" class="card-bmarks-btn">В закладки</a>
+                            </div>
+                            <h2 class="h-price"><a href="#1">Перфоратор Bosh<br>BFG 9000</a></h2>
+                            <h2 class='h-sale'>32 600 Р.</h2>
+                            <a href="#1" class="price-go">12 500 Р.</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 pop-item-container">
+                        <div class="pop-item-content">
+                            <div class="pop-item-btns hidden">
+                                <a href="#1" class="card-buy-btn">Купить</a>
+                                <a href="#1" class="card-bmarks-btn">В закладки</a>
+                            </div>
+                            <img class="pop-item-content-img" src="img/card_perforator_2.png">
+                            <h2 class="h-price"><a href="#1">Перфоратор Bosh<br>BFG 3000</a></h2>
+                            <h2 class='h-sale'>22 500 Р.</h2>
+                            <a href="#1" class="price-go">15 500 Р.</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 pop-item-container">
+                        <div class="pop-item-content">
+                            <div class="pop-item-btns hidden">
+                                <a href="#1" class="card-buy-btn">Купить</a>
+                                <a href="#1" class="card-bmarks-btn">В закладки</a>
+                            </div>
+                            <img class="pop-item-content-img" src="img/card_perforator_3.png">
+                            <h2 class="h-price"><a href="#1">Перфоратор Bosh<br>BFG 6000</a></h2>
+                            <h2 class='h-sale'>30 600 Р.</h2>
+                            <a href="#1" class="price-go">25 500 Р.</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 pop-item-container">
+                        <div class="pop-item-content">
+                            <div class="pop-item-btns hidden">
+                                <a href="#1" class="card-buy-btn">Купить</a>
+                                <a href="#1" class="card-bmarks-btn">В закладки</a>
+                            </div>
+                            <img class="pop-item-content-img" src="img/card_perforator_2.png">
+                            <h2 class="h-price"><a href="#1">Перфоратор Bosh<br>BFG 2000</a></h2>
+                            <h2 class='h-sale'><br></h2>
+                            <a href="#1" class="price-go">12 500 Р.</a>
+                            <div class="new-ribbon"></div>
+                        </div>
+                    </div>
+                </div>
+</div>
+            </div>
+
+            <!-- Популярные производители -->
+
+            <div class="container-fluid pop-container-2">
+                <div class="row">
+                    <div class="col-lg-12 pop-container-header">
+                        <h1>Популярные производители:</h1>
+                        <a href="#1" class="header-btn">Все производители</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 pop-container-companies">
+                        <a href="#1" class="company-card"><img src="img/pop_company_bosch.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_makita.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_dewalt.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_interskol.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_hitachi.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_lg.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_aeg.png"></a>
+                        <a href="#1" class="company-card"><img src="img/pop_company_metabo.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Сервисы -->
+
+        <div class="container-fluid service-container">
+            <div class="container-fluid service-container-inner">
+                <div class="row">
+                    <div class="col-lg-12 service-header">
+                        <h1>Сервисы</h1>
+                        <p>Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 service-tabs">
+                        <ul class="tabs">
+                            <li data-panelNum="panel1" class="active">Доставка</li>
+                            <li data-panelNum="panel2">Гарантия</li>
+                            <li data-panelNum="panel3">Кредит</li>
+                        </ul>
+
+                        <div id="panel1" class="tabpanel active">
+                            <div class="tabpanel-shadow"></div>
+                            <h1>Доставка</h1>
+                            <p>Мы с удовольствием доставим ваш товар прямо к Вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,
+                                <br> поднимая его на Ваш этаж!</p>
+                        </div>
+
+                        <div id="panel2" class="tabpanel">
+                            <div class="tabpanel-shadow"></div>
+                            <h1>Гарантия</h1>
+                            <p>Если купленный у на товар поломается или заискрит,
+                                <br> а также в случае пожара, спровоцированного его возгаранием, Вы всегда можете быть уверены в нашей гарантииюю Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами. </p>
+                        </div>
+
+                        <div id="panel3" class="tabpanel">
+                            <div class="tabpanel-shadow"></div>
+                            <h1>Кредит</h1>
+                            <p>Залезть в договую яму теперь стало проще! Кредитные консультанты придут Вам на помощь.</p>
+                            <a href="#1" class="credit-btn">Отправить заявку</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Информация, контакты -->
+
+        <div class="container-fluid info-container">
+            <div class="container-fluid info-container-inner">
+                <div class="row">
+                    <div class="col-lg-7 col-sm-6 about">
+                        <h1>Компания &laquo;Техномарт&raquo;</h1>
+                        <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
+                        <p>Мы можем доставить Ваш товар в самые отдаленные точки России! Техномарт работает со многими транспортными компнаиями:</p>
+                        <ul>
+                            <li>Деловые линии</li>
+                            <li>Автотрейдинг</li>
+                            <li>ЖелДорЭкспедиция</li>
+                        </ul>
+                        <a href="#1" class="about-btn">Подробнее о компании</a>
+                    </div>
+
+                    <div class="col-lg-5 col-sm-6 contacts">
+                        <h1>Контакты</h1>
+                        <p>Вы можете забрать товар сами, заехав в наш офис.</p>
+                        <div id="map"></div>
+                        <a href="#1" class="contacts-btn">Заблудились? Напишите нам!</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </content>
+
+    <footer>
+
+        <!-- Подвал 1 -->
+
+        <div class="container-fluid footer1-container">
+            <div class="container-fluid footer1-container-inner">
+                <div class="row">
+                    <div class="col-sm-5 footer1-left">
+                        <a href="index.html" class="logo-bottom">Техномарт</a>
+                        <span>г. Москва, ул. Строителей, 15<br>
+                        +7 (495) 555-05-55</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-sm-7 footer1-right">
+                        <ul class="footer-links-1">
+                            <li><a href="#1">Компания</a></li>
+                            <li><a href="#1">Новости</a></li>
+                            <li><a href="catalog.html">Каталог</a></li>
+                            <li><a href="#1">Доставка</a></li>
+                            <li><a href="#1">Контакты</a></li>
+                        </ul>
+                        <ul class="footer-links-2">
+
+                            <li><a class="a-orange" href="#1">Материалы</a></li>
+                            <li><a class="a-orange" href="#1">Техника</a></li>
+                            <li><a class="a-orange" href="#1">Инструмент</a></li>
+                            <li class="footer-dot"><img src="img/dot.gif"></li>
+                            <li><a class="a-orange" href="#1">Спецпредложения</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Подвал 2 -->
+
+        <div class="container-fluid footer2-container">
+            <div class="container-fluid footer2-container-inner">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12 footer2-left">
+                        <span>&copy; 2010-2013 Компания &laquo;Техномарт&raquo;<br>
+                        Все права защищены
+                        </span>
+                        <ul class="social-btns">
+                            <li>
+                                <a class="sb-1" href="#1"></a>
+                            </li>
+                            <li>
+                                <a class="sb-2" href="#1"></a>
+                            </li>
+                            <li>
+                                <a class="sb-3" href="#1"></a>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 footer2-right">
+
+                        <div class="footer2-txt2">Дизайн сайта:
+                            <br>
+                            <a href="http://www.glukhanko.ru" class="orange-a">www.glukhanko.ru</a>
+                        </div>
+                        <div class="footer2-txt1">Обратная связь:
+                            <br>
+                            <a href="mailto:info@technomart.ru" class="orange-a">info@technomart.ru</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Адаптивное меню -->
+    <div class="mainmenu-container-alt">
+        <span class="sr-only">Закрыть меню</span>
+        <button class="menu-close"><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+        <div class="clear"></div>
+        <div class="row">
+            <nav class="col-sm-12 mainmenu-alt">
+                <form class="topsearch-alt" name="search-form" action="">
+                    <input type="text" class="search-text" value="" placeholder="Поиск:">
+                    <input type="button" class="submit-search">
+                </form>
+                <ul class="mainmenu-ul-alt">
+                    <li class="main-menu-ul-alt button"><a href="index.html">Главная</a></li>
+                    <li class="main-menu-ul-alt button"><a href="#1">Компания</a></li>
+                    <li class="main-menu-ul-alt button"><a href="catalog.html">Каталог</a></li>
+                    <li class="main-menu-ul-alt button"><a href="#1">Новости</a></li>
+                    <li class="main-menu-ul-alt button"><a href="#1">Спецпредложения</a></li>
+                    <li class="main-menu-ul-alt button"><a href="#1">Доставка</a></li>
+                    <li class="main-menu-ul-alt button"><a href="#1">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+</body>
+
+</html>

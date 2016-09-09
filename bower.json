@@ -1,0 +1,27 @@
+{
+  "name": "technomart",
+  "authors": [
+    "Dmitry Scherenkov <soulance@yandex.ru>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "3.3.4",
+    "jquery-ui": "~1.12.0",
+    "angularUtils-pagination": "angular-utils-pagination#~0.11.1",
+    "angularjs-slider": "~5.4.3"
+  },
+  "devDependencies": {}
+}

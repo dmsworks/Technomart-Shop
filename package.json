@@ -1,0 +1,26 @@
+{
+  "name": "technomart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Scherenkov <soulance@yandex.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-if": "^2.0.1",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-useref": "^3.1.0",
+    "gulp-wiredep": "0.0.0"
+  },
+  "dependencies": {
+    "wiredep": "^4.0.0"
+  }
+}
